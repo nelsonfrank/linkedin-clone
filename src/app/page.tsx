@@ -1,6 +1,13 @@
+"use client";
 import Image from "next/image";
-
+import { MdOndemandVideo } from "react-icons/md";
+import { HiOutlinePhoto, HiPhoto } from "react-icons/hi2";
+import { BsCalendar2Date } from "react-icons/bs";
+import { RiPagesLine } from "react-icons/ri";
 export default function Home() {
+	const handleOpenCreatePostModel = () => {
+		console.log("focused");
+	};
 	return (
 		<>
 			<div className='grid grid-cols-1 md:grid-cols-3 md:gap-4 lg:grid-cols-4 lg:gap-6 mt-8'>
@@ -59,10 +66,45 @@ export default function Home() {
 						</div>
 					</div>
 				</aside>
-				<main className='bg-white col-span-2'>
-					<div>
-						{/* post input goes here */}
-						<p>Post input here</p>
+				<main className=' col-span-2'>
+					<div className='bg-white p-4 rounded-lg'>
+						<div className='flex items-center gap-4'>
+							<div>
+								<Image
+									src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80'
+									alt='profile'
+									width={70}
+									height={70}
+									className='w-14 h-14 rounded-full'
+								/>
+							</div>
+							<div className='flex-1'>
+								<input
+									type='text'
+									placeholder='Start a post'
+									className='p-4 border border-gray-500 rounded-3xl w-full caret-transparent placeholder:font-bold placeholder:text-gray-500 focus:outline-none focus:bg-secondary-light focus:cursor-pointer'
+									onFocus={handleOpenCreatePostModel}
+								/>
+							</div>
+						</div>
+						<div className='mt-4 mx-2 flex justify-between'>
+							<button className='flex items-center gap-2'>
+								<HiPhoto className='text-3xl text-primary' />
+								<span className='font-bold text-gray-500'>Photo</span>
+							</button>
+							<button>
+								<MdOndemandVideo />
+								<span className='font-bold text-gray-500'>Video</span>
+							</button>
+							<button>
+								<BsCalendar2Date />
+								<span className='font-bold text-gray-500'>Event</span>
+							</button>
+							<button>
+								<RiPagesLine />
+								<span className='font-bold text-gray-500'>Write article</span>
+							</button>
+						</div>
 					</div>
 
 					<div>
