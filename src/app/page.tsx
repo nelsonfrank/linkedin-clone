@@ -1,9 +1,11 @@
 "use client";
 import Image from "next/image";
 import { MdOndemandVideo } from "react-icons/md";
-import { HiOutlinePhoto, HiPhoto } from "react-icons/hi2";
+import { HiPhoto } from "react-icons/hi2";
 import { BsCalendar2Date } from "react-icons/bs";
 import { RiPagesLine } from "react-icons/ri";
+import { HiGlobeEuropeAfrica } from "react-icons/hi2";
+
 export default function Home() {
 	const handleOpenCreatePostModel = () => {
 		console.log("focused");
@@ -15,13 +17,7 @@ export default function Home() {
 					<div className='bg-white rounded-md'>
 						<div className='h-20 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-t-md'></div>
 						<div className='flex justify-center -mt-12'>
-							<Image
-								src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80'
-								alt='profile'
-								width={100}
-								height={100}
-								className='w-20 h-20 rounded-full'
-							/>
+							<Avatar />
 						</div>
 						<div className='mt-4 text-center pb-6 px-4'>
 							<h6 className='text-xl font-bold'>Joan Joseph</h6>
@@ -70,13 +66,7 @@ export default function Home() {
 					<div className='bg-white p-4 rounded-lg'>
 						<div className='flex items-center gap-4'>
 							<div>
-								<Image
-									src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80'
-									alt='profile'
-									width={70}
-									height={70}
-									className='w-14 h-14 rounded-full'
-								/>
+								<Avatar size='small' />
 							</div>
 							<div className='flex-1'>
 								<input
@@ -107,9 +97,32 @@ export default function Home() {
 						</div>
 					</div>
 
-					<div>
-						{/* post goes here */}
-						<p>Posts goes here</p>
+					<div className='mt-8'>
+						<div className='bg-white p-2 rounded-md'>
+							<div className='flex gap-2'>
+								<Avatar size='small' />
+								<div>
+									<div className='flex'>
+										<h4 className=' font-bold'>Zain Kahn</h4>
+										<div className='text-gray-400'>
+											<span className=' mx-1 text-gray-400'>&#x2022;</span>
+											3rd+
+										</div>
+									</div>
+									<div>
+										<p className='text-sm text-gray-500'>
+											Building a self-managed trading portfolio
+										</p>
+									</div>
+									<div>
+										<p className='text-xs text-gray-400 flex items-center'>
+											1w <span className='mx-0.5'>&#x2022;</span>{" "}
+											<HiGlobeEuropeAfrica />
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</main>
 				<aside className='bg-white'>
@@ -126,3 +139,31 @@ export default function Home() {
 		</>
 	);
 }
+
+interface AvatarProps {
+	size?: "large" | "small";
+	className?: string;
+}
+const Avatar = ({ size = "large", className }: AvatarProps) => {
+	const config =
+		size === "large"
+			? {
+					height: 100,
+					width: 100,
+					styles: `w-20 h-20`,
+			  }
+			: {
+					height: 70,
+					width: 70,
+					styles: `w-14 h-14`,
+			  };
+	return (
+		<Image
+			src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80'
+			alt='profile'
+			width={config.height}
+			height={config.width}
+			className={`${config.styles} rounded-full`}
+		/>
+	);
+};
