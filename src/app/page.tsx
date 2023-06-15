@@ -26,7 +26,7 @@ export default function Home() {
 						<div className='mt-4 text-center pb-6 px-4'>
 							<h6 className='text-xl font-bold'>Joan Joseph</h6>
 							<div className='mt-2'>
-								<p className='text-sm'>
+								<p className='text-sm text-gray-500'>
 									Software Engineer | Mentor | Passionate about Typescript and
 									Web Development; Currently learning Rust and Go |
 								</p>
@@ -82,26 +82,26 @@ export default function Home() {
 								<input
 									type='text'
 									placeholder='Start a post'
-									className='p-4 border border-gray-500 rounded-3xl w-full caret-transparent placeholder:font-bold placeholder:text-gray-500 focus:outline-none focus:bg-secondary-light focus:cursor-pointer'
+									className='p-3 border border-gray-400 rounded-3xl w-full caret-transparent placeholder:font-bold placeholder:text-gray-400 focus:outline-none focus:bg-secondary-light focus:cursor-pointer'
 									onFocus={handleOpenCreatePostModel}
 								/>
 							</div>
 						</div>
-						<div className='mt-4 mx-2 flex justify-between'>
-							<button className='flex items-center gap-2'>
+						<div className='mx-2 flex justify-between flex-wrap mt-2'>
+							<button className='flex items-center gap-2 p-2 rounded-md hover:bg-gray-200 focus:bg-gray-200'>
 								<HiPhoto className='text-3xl text-primary' />
 								<span className='font-bold text-gray-500'>Photo</span>
 							</button>
-							<button>
-								<MdOndemandVideo />
+							<button className='flex items-center gap-2 p-2 rounded-md hover:bg-gray-200 focus:bg-gray-200'>
+								<MdOndemandVideo className='text-3xl text-green-500' />
 								<span className='font-bold text-gray-500'>Video</span>
 							</button>
-							<button>
-								<BsCalendar2Date />
+							<button className='flex items-center gap-2 p-2 rounded-md hover:bg-gray-200 focus:bg-gray-200'>
+								<BsCalendar2Date className='text-2xl text-orange-700' />
 								<span className='font-bold text-gray-500'>Event</span>
 							</button>
-							<button>
-								<RiPagesLine />
+							<button className='flex items-center gap-2 p-2 rounded-md hover:bg-gray-200 focus:bg-gray-200'>
+								<RiPagesLine className='text-2xl text-rose-700' />
 								<span className='font-bold text-gray-500'>Write article</span>
 							</button>
 						</div>
