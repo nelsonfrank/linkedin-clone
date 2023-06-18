@@ -13,7 +13,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 		<html lang='en'>
 			<body className={`${inter.className} bg-secondary-light`}>
 				<Header />
-				<section className='px-8 max-w-6xl mx-auto '>{children}</section>
+				<section className='mx-auto max-w-7xl px-8 '>{children}</section>
 			</body>
 		</html>
 	);

@@ -18,7 +18,7 @@ export default function Home() {
 	};
 	return (
 		<>
-			<div className='mt-8 grid grid-cols-1 md:grid-cols-3 md:gap-4 lg:grid-cols-4 lg:gap-6'>
+			<div className='mt-8 grid grid-cols-1 md:grid-cols-3 md:gap-4 lg:grid-cols-4 lg:gap-4'>
 				<aside>
 					<div className='rounded-md bg-white'>
 						<div className='h-20 rounded-t-md bg-gradient-to-r from-cyan-500 to-blue-500'></div>
@@ -78,7 +78,7 @@ export default function Home() {
 								<input
 									type='text'
 									placeholder='Start a post'
-									className='w-full rounded-3xl border border-gray-400 p-3 caret-transparent placeholder:font-bold placeholder:text-gray-400 focus:cursor-pointer focus:bg-secondary-light focus:outline-none'
+									className='w-full cursor-pointer rounded-3xl border border-gray-400 p-3  caret-transparent placeholder:font-bold placeholder:text-gray-400 hover:bg-secondary-light focus:cursor-pointer focus:bg-secondary-light focus:outline-none'
 									onFocus={handleOpenCreatePostModel}
 								/>
 							</div>
@@ -137,7 +137,7 @@ export default function Home() {
 										</button>
 									</div>
 								</div>
-								<div className='mb-3'>
+								<div>
 									<p className='text-sm'>
 										Economic Freedom has become part and parcel of African
 										independence. We need true leaders who will truly stand for
@@ -177,20 +177,20 @@ export default function Home() {
 							</div>
 							<div className='px-4 pb-2'>
 								<div className='my-2 h-px w-full bg-gray-200'></div>
-								<div className='grid grid-cols-4'>
-									<button className='flex items-center justify-center gap-1 rounded-md px-2 py-3 text-gray-500 hover:bg-gray-200 '>
+								<div className='grid grid-cols-4 gap-4'>
+									<button className='flex items-center justify-center gap-1 rounded-md px-1.5 py-2.5 text-gray-500 hover:bg-gray-200 '>
 										<AiOutlineLike className='text-xl' />
 										<span className='text-sm font-semibold'>Like</span>
 									</button>
-									<button className='flex items-center justify-center gap-1 rounded-md px-2 py-3 text-gray-500 hover:bg-gray-200 '>
+									<button className='flex items-center justify-center gap-1 rounded-md px-1.5 py-2.5 text-gray-500 hover:bg-gray-200 '>
 										<FaRegCommentDots className='text-xl' />
 										<span className='text-sm font-semibold'>Comment</span>
 									</button>
-									<button className='flex items-center justify-center gap-1 rounded-md px-2 py-3 text-gray-500 hover:bg-gray-200 '>
+									<button className='flex items-center justify-center gap-1 rounded-md px-1.5 py-2.5 text-gray-500 hover:bg-gray-200 '>
 										<BiRepost className='text-2xl' />
 										<span className='text-sm font-semibold'>Repost</span>
 									</button>
-									<button className='flex items-center justify-center gap-1 rounded-md px-2 py-3 text-gray-500 hover:bg-gray-200 '>
+									<button className='flex items-center justify-center gap-1 rounded-md px-1.5 py-2.5 text-gray-500 hover:bg-gray-200 '>
 										<RiSendPlaneFill className='text-xl' />
 										<span className='text-sm font-semibold'>Send</span>
 									</button>
@@ -199,15 +199,20 @@ export default function Home() {
 						</div>
 					</div>
 				</main>
-				<aside className='bg-white'>
-					<div>
-						{/* feed goes here */}
-						<p>feed goes here</p>
+				<aside className='hidden flex-col gap-2 md:flex'>
+					<div className='rounded-md bg-white p-2'>
+						<div className='mb-4'>
+							<h3 className=' font-bold'>Add to your feed</h3>
+						</div>
+						<div className='px-1'>
+							<Feed />
+							<Feed />
+							<Feed />
+						</div>
 					</div>
-					<div>
-						{/* footer goes here */}
+					{/* <div className='rounded-md bg-white p-2'>
 						<p>footer goes here</p>
-					</div>
+					</div> */}
 				</aside>
 			</div>
 		</>
@@ -241,3 +246,23 @@ const Avatar = ({ size = "large", className }: AvatarProps) => {
 		/>
 	);
 };
+
+const Feed = () => (
+	<div className='my-2 flex gap-1'>
+		<div className='w-1/4'>
+			<Avatar size='small' />
+		</div>
+		<div className='w-3/4'>
+			<h4 className='text-sm font-bold'>Edwin Bruno</h4>
+			<p className='text-xs text-gray-500'>
+				Passionated about Technology, Hybrids Marketing, and investment
+			</p>
+			<div className='my-2'>
+				<button className='flex items-center gap-1 rounded-3xl border border-gray-400 px-4 py-2 text-sm font-bold'>
+					<HiPlus />
+					<span>Follow</span>
+				</button>
+			</div>
+		</div>
+	</div>
+);
